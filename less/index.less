@@ -1,0 +1,96 @@
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: "阿里巴巴普惠体 2.0 95 ExtraBold";font-weight: 800;src: url("//at.alicdn.com/wf/webfont/WIAvTVZFrvFO/LZotgUM_lUIEtWt0RzOqq.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/WIAvTVZFrvFO/XJ7cDvnIPQjHxM_nHAxvZ.woff") format("woff");
+  font-display: swap;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0f0e18;
+  text-align: center;
+  font-family: "阿里巴巴普惠体 2.0 95 ExtraBold","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  .app-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .app-title {
+      color: #ffffff;
+      font-size: 2.25rem /* 36/16 */;
+    }
+    .chessboard {
+      .cell-row {
+        display: flex;
+        &:not(:first-child) {
+          margin-top: .3125rem /* 5/16 */;
+        }
+        .cell-item {
+          width: 9.375rem /* 150/16 */;
+          height:9.375rem /* 150/16 */;
+          background-color: #2A2A3F;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          &:not(:last-child) {
+            margin-right: .3125rem /* 5/16 */;
+          }
+          &:hover {
+            transform: scale(1.02);
+          }
+          .chess-icon {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .notice {
+    color: #ffffff;
+    font-size: 2rem /* 32/16 */;
+    margin-top: 1.875rem /* 30/16 */;
+    text-align: center;
+    height: 2.5rem /* 40/16 */;
+    user-select: none;
+  }
+  .restart-button {
+    position: absolute;
+    bottom: -7.125rem /* 50/16 */;
+    left: 50%;
+    display: inline-block;
+    background-color: #ffffff;
+    color: #409eff;
+    border-radius: .5rem /* 8/16 */;
+    width: 12.5rem /* 200/16 */;
+    height: 3.125rem /* 50/16 */;
+    line-height: 3.125rem /* 50/16 */;
+    margin-left: -6.25rem /* 100/16 */;
+    text-decoration: none;
+    font-size: 1.25rem /* 20/16 */;
+    font-weight: 600;
+    box-shadow: 0px 9px 0px #409eff, 0px 9px 25px rgb(255 255 255 / 60%);
+    transition: all .1s ease;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 2rem /* 32/16 */;
+      height: 2rem /* 32/16 */;
+      background: url(../images/svg/restart.svg) no-repeat center;
+      vertical-align: middle;
+      background-size: 2rem /* 32/16 */;
+      margin-top: -5px;
+      margin-right: .3125rem /* 5/16 */;
+    }
+    &:active {
+      bottom: -7.5rem /* 56/16 */;
+      box-shadow: 0px 3px 0px #409eff, 0px 3px 6px rgb(255 255 255 / 90%);
+    }
+  }
+}
