@@ -170,7 +170,7 @@ const app = createApp({
           let cloneChessboard = JSON.parse(JSON.stringify(chessboard))
           // 下棋
           cloneChessboard[row][column] = chess
-          // 根据「对手方」目前情况下未来「最好的结果」，换位得出我方「最差的结果」(-bestResult)
+          // 根据「对手方」目前情况下未来「最好的结果」, 换位得出我方「最差的结果」(-bestResult)
           let bestResult = this.bestChoice(cloneChessboard, 3 - chess).result
           // 比较后更新落子位置和结果
           if (-bestResult >= result) {
@@ -193,7 +193,7 @@ const app = createApp({
             let cloneChessboard = JSON.parse(JSON.stringify(chessboard))
             // 下棋
             cloneChessboard[row][column] = chess
-            // 根据「对手方」目前情况下未来「最好的结果」，换位得出我方「最差的结果」(-bestResult)
+            // 根据「对手方」目前情况下未来「最好的结果」, 换位得出我方「最差的结果」(-bestResult)
             let bestResult = that.bestChoice(cloneChessboard, 3 - chess).result
             // 比较后更新落子位置和结果
             if (-bestResult >= result) {
@@ -281,7 +281,7 @@ const app = createApp({
        例如: 从当前这个下落棋子的坐标向八个方向判断, 如果存在某一个方向有连续三个棋子, 则相同方向相加为2, 举例: 右侧连续得分为3, 但是左侧连续得分为-1, 相加则为2
        如果该点最后落在中间, 比如 x _ x 这样, 则左侧得分为1, 右侧得分也为1, 因此只需要是否存在某一方向上得分大于等于2的得分即可判断是否已分出胜负.
        */
-      if ((south + north >= 2) || (east + west >= 2) || (east_south + west_south >= 2) || (east_north + west_north >= 2)) {
+      if ((south + north >= 2) || (east + west >= 2) || (east_south + west_north >= 2) || (east_north + west_south >= 2)) {
         return true
       }
       return false

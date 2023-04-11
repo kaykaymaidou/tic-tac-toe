@@ -17,7 +17,7 @@
         <div class="cell-row" v-for="(cellRow, index) in chessboard" :key="index">
           <div class="cell-item" v-for="(item, id) in cellRow" :key="id" @click="playingChess(id, index)">
             <template v-if="/1|2/.test(item)">
-              <image :src="item === 2 ? `images/svg/${wrong}` : item === 1 ? `images/svg/${right}` : ''" alt="chess-icon" class="chess-icon" />
+              <image :src="item === 1 ? `images/svg/${wrong}` : item === 2 ? `images/svg/${right}` : ''" alt="chess-icon" class="chess-icon" />
             </template>
           </div>
         </div>
